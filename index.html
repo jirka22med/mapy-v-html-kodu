@@ -17,7 +17,7 @@
         html, body {
             height: 100%;
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #0033CC;
         }
 
         .container {
@@ -59,7 +59,7 @@
             transform: translateY(-50%);
             width: 20px;
             height: 20px;
-            color: #6b7280;
+            color: black;
             pointer-events: none;
             transition: color 0.3s ease;
             z-index: 10;
@@ -68,23 +68,23 @@
         #search-input {
             width: 100%;
             padding: 16px 16px 16px 48px;
-            background: white;
+            background: #8B4513;
             border: 2px solid transparent;
             border-radius: 12px;
             font-size: 16px;
             font-weight: 400;
-            color: #374151;
+            color: black;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             outline: none;
         }
 
         #search-input::placeholder {
-            color: #9ca3af;
+            color: black;
         }
 
         #search-input:hover {
-            border-color: #3b82f6;
+            border-color: black;
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
             transform: translateY(-1px);
         }
@@ -102,7 +102,7 @@
 
         .search-btn {
             background: linear-gradient(135deg, #10b981, #059669);
-            color: white;
+            color: black;
             font-weight: 600;
             padding: 16px 24px;
             rounded: 12px;
@@ -129,7 +129,7 @@
 
         .location-btn {
             background: linear-gradient(135deg, #3b82f6, #2563eb);
-            color: white;
+            color: black;
             font-weight: 600;
             padding: 16px 24px;
             rounded: 12px;
@@ -156,7 +156,7 @@
 
         #map {
             flex: 1;
-            border-radius: 16px;
+            border-radius: 10px;
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
             overflow: hidden;
             min-height: 400px;
@@ -193,7 +193,7 @@
         }
 
         .modal-content p {
-            color: #6b7280;
+            color: #FF7733;
             margin-bottom: 1.5rem;
             line-height: 1.5;
         }
@@ -217,6 +217,9 @@
             padding: 12px;
             border-radius: 8px;
             max-width: 300px;
+            
+            
+            
         }
 
         .info-window-content h3 {
@@ -667,7 +670,7 @@ const places = [
 
                 // Vytvoření mapy
                 map = new Map(document.getElementById("map"), {
-                    zoom: 13,
+                    zoom: 12,
                     center: places[0].position,
                     mapId: "44fff76847565e08",
                     mapTypeControl: true,
@@ -683,7 +686,7 @@ const places = [
                 });
 
                 infoWindow = new google.maps.InfoWindow({
-                    pixelOffset: new google.maps.Size(0, -35)
+                    pixelOffset: new google.maps.Size(0, -50)
                 });
 
                 // Inicializace Places Service pro manuální vyhledávání
@@ -811,7 +814,7 @@ const places = [
 
                                 // Centrování a zoom na aktuální polohu
                                 map.setCenter(pos);
-                                map.setZoom(15);
+                                map.setZoom(25);
                                 infoWindow.close();
                             },
                             () => {
